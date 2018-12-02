@@ -1,3 +1,34 @@
 page-home {
+    *{
+        color: white !important;
+        font-weight: bold !important;
+    }
+    .colorText{
+        color: #121111 !important;
+        font-weight: bold !important;
+    }
+    .Fondo{
+        background:url('../assets/imgs/cine.gif') no-repeat center fixed !important;
+        background-size: cover !important;
+    }
+
+    .fab[mini] {
+        margin: 0px;
+        width: 100px;
+        height: 100px;
+        line-height: 40px;
+    }
+
+    ion-fab[center] {
+        left: 43.5% !important;
+        margin-left: -28px !important;
+    }
+
+    .toolbar-background {
+        background-color: #363639;
+    }
+    .microfono{
+        background-image:url('../assets/imgs/microfono.jpeg'); background-size:cover !important;
+    }
 
 }

@@ -1,14 +1,97 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title text-center>
+      S·I·R·I  CINEMARK
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="Fondo">
+  
+  <ion-list *ngIf="flagTeatros">
+    <ion-item *ngFor="let item of teatros;let i = index">
+      <ion-avatar item-start>
+        <img src="{{ item.foto }}">
+      </ion-avatar>
+      <h2 class="colorText" >Opción {{ i + 1  }}</h2>
+      <p class="colorText" >{{ item.nombre }}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="flagDias">
+    <ion-item *ngFor="let item of diasLayout;let i = index">
+      <h2 class="colorText" >Opción {{ i + 1  }}</h2>
+      <p class="colorText" >{{ item }}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="flagPelicula">
+    <ion-item *ngFor="let item of Pelicula;let i = index">
+      <ion-thumbnail item-start>
+        <img src="{{ item.foto }}">
+      </ion-thumbnail>
+      <h2 class="colorText" >Opción {{ i + 1  }}</h2>
+      <p class="colorText" >{{ item.nombre }}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="flagFormato">
+    <ion-item *ngFor="let item of Formato;let i = index">
+      <h2 class="colorText" >Opción {{ i + 1  }}</h2>
+      <p class="colorText" >{{ item }}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="flagHora">
+    <ion-item *ngFor="let item of Hora;let i = index">
+      <h2 class="colorText" >Opción {{ i + 1  }}</h2>
+      <p class="colorText" >{{ item }}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="flagValor">
+    <ion-item >
+      <h2 class="colorText">Valor boleta</h2>
+      <p class="colorText" > $8.500 </p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="flagFactura">
+    <ion-item >
+      <h2 class="colorText">TEATRO</h2>
+      <p class="colorText" > {{ respuesta1 }}</p>
+    </ion-item>
+    <ion-item >
+      <h2 class="colorText">DÍA</h2>
+      <p class="colorText" > {{ respuesta2 }}</p>
+    </ion-item>
+    <ion-item >
+      <h2 class="colorText">PELICULA</h2>
+      <p class="colorText" >{{ respuesta3 }}</p>
+    </ion-item>
+    <ion-item >
+      <h2 class="colorText">FORMATO</h2>
+      <p class="colorText" >{{ respuesta4 }}</p>
+    </ion-item>
+    <ion-item >
+      <h2 class="colorText">HORA</h2>
+      <p class="colorText" >{{ respuesta5 }}</p>
+    </ion-item>
+    <ion-item >
+      <h2 class="colorText">CANTIDAD DE BOLETAS</h2>
+      <p class="colorText" >{{ respuesta6 }}</p>
+    </ion-item>
+    <ion-item >
+      <h2 class="colorText"> VALOR TOTAL </h2>
+      <p class="colorText" >{{ respuesta7 | currency:'COP' }}</p>
+    </ion-item>
+  </ion-list>
+
+
+
+  <ion-fab bottom center>
+    <button ion-fab mini class="microfono">
+    </button>
+  </ion-fab>
+
 </ion-content>
